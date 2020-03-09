@@ -3,8 +3,8 @@ let movingDirection = 'left';
 let limit = Math.floor(Math.random() * (windowWidth/2) ) + 1;
 
 function moveNesamani() {
-  let nesamaniElement = $(".nesamaniJet")
-  let position = nesamaniElement.position()
+  let nesamaniElement = $(".nesamaniJet");
+  let position = nesamaniElement.position();
   let currentLeft = position.left;
 
   if (movingDirection ==='left' && nesamaniElement.offset().left <= limit) {
@@ -27,7 +27,7 @@ function isNesamniHit(){
    setInterval(function(){
         var nesa=$(".nesamaniJet").offset().left 
         var ston=$("#stone").offset().left;
-        if(ston>=nesa &&ston<=(nesa+150)){
+        if(ston>=nesa &&ston<=(nesa+180)){
           alert("siucess");          
           $(".nesamaniJet").attr("src", "images/nesamani_hit.png");
           setTimeout(function(){ 
