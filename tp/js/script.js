@@ -27,8 +27,12 @@ function isNesamniHit(){
    setInterval(function(){
         var nesa=$(".nesamaniJet").offset().left 
         var ston=$("#stone").offset().left;
-        if(ston>=nesa &&ston<=(nesa+100)){
-          alert("siucess");
+        if(ston>=nesa &&ston<=(nesa+150)){
+          alert("siucess");          
+          $(".nesamaniJet").attr("src", "images/nesamani_hit.png");
+          setTimeout(function(){ 
+          $(".nesamaniJet").attr("src", "images/nesamani.png");
+            }, 1000);
           }
         },1800);
   // Your code goes here..
@@ -38,7 +42,12 @@ function isNesamniHit(){
   // Checking function should be called recursively.
 }
 $(document).ready(function(){
+  var click=0;
   $(".top-container").click(function(e){
+    click++;
+    if (click>3) {
+      $(".nesamaniJet").attr("src", "images/nesamani_saved.png");
+    }
     $('<div class="hammer">')
       .css({
         "left": e.pageX + 'px',
